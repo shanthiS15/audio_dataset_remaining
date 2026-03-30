@@ -1,7 +1,5 @@
 # audio_dataset_remaining
 
-# 🎯 Multimodal Mood Prediction from Lecture Content
-
 ## 📂 Dataset
 
 The dataset consists of lecture audio files and corresponding transcripts.
