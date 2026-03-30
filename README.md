@@ -37,8 +37,8 @@ Due to GitHub size limitations, audio files are stored externally.
 
 ## 🔊 Transcription Code (Whisper)
 The following Python script was used to convert audio files into text transcripts using OpenAI Whisper.
-CODE:
 
+```python
 import os
 import whisper
 
@@ -48,24 +48,25 @@ folder = "."
 
 for file in os.listdir(folder):
     if file.endswith(".wav"):
-        
+
         txt_filename = file.replace(".wav", ".txt")
-        
-        # ✅ SKIP if already processed
+
+        # Skip already processed files
         if os.path.exists(txt_filename):
             print(f"Skipping (already done): {file}")
             continue
-        
+
         print(f"Processing: {file}")
-        
+
         result = model.transcribe(file)
-        
+
         with open(txt_filename, "w", encoding="utf-8") as f:
             f.write(result["text"])
-        
-        print(f"Saved: {txt_filename}")
-print("All files transcribed successfully!")
 
+        print(f"Saved: {txt_filename}")
+
+print("All files transcribed successfully!")
+```
 ### ⚙️ Installation
 
 pip install openai-whisper
