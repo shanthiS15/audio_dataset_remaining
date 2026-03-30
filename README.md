@@ -41,8 +41,11 @@ CODE:
 
 import os
 import whisper
+
 model = whisper.load_model("base")
+
 folder = "."
+
 for file in os.listdir(folder):
     if file.endswith(".wav"):
         
@@ -61,7 +64,6 @@ for file in os.listdir(folder):
             f.write(result["text"])
         
         print(f"Saved: {txt_filename}")
-
 print("All files transcribed successfully!")
 
 ### ⚙️ Installation
